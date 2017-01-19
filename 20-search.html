@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Mockup</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/simple-sidebar.css">
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+  $(function() {
+    $('#btn-search').on('click', function() {
+      submitWithLoading(2000, function() {
+        $('#search-result-wrapper').show();
+      });
+    });
+  });
+  </script>
+</head>
+<body>
+
+  <nav class="navbar navbar-fixed-top my-navbar">
+    <div class="container-fluid">
+      <div class="navbar-left">
+        <a href="10-portal.html" class="navbar-text my-navbar-link">Bootstrap Mockup</a>
+      </div>
+      <div class="navbar-right">
+        <p class="navbar-text">
+          <a data-toggle="modal" data-target="#logout-modal" class="my-navbar-link">ログアウト</a>
+        </p>
+      </div>
+    </div>
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- side navigation -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="active">
+          <a href="20-search.html">検索／更新</a>
+        </li>
+        <li>
+          <a href="#">新規追加</a>
+        </li>
+        <li>
+          <a href="#">サイドメニューA</a>
+        </li>
+        <li>
+          <a href="#">サイドメニューB</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- page content -->
+    <div id="page-content-wrapper">
+
+      <!-- search condition area -->
+      <div id="search-condition-wrapper" class="panel-group">
+        <div class="panel panel-default">
+          <!-- header -->
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <a href="#search-condition" data-toggle="collapse" data-parent="#search-condition-wrapper">検索条件</a>
+            </h3>
+          </div>
+          <!-- conditions -->
+          <div id="search-condition" class="panel-collapse in">
+            <div class="panel-body">
+              <form action="#" id="search-form" method="POST">
+                <div class="form-group">
+                  <div class="form-inline">
+                    <div class="form-group">
+                      <input type="text" id="content-code" class="form-control" name="content-id" placeholder="コード">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" id="content-name" class="form-control" name="content-name" placeholder="タイトル">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-inline">
+                    <input type="text" id="author-name" class="form-control" name="author-name" placeholder="アーティスト">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" id="my-checkbox" name="my-checkbox" value="1">チェックボックス
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- extended conditions -->
+                <div id="extended-search-condition"></div>
+                <hr>
+                <div class="row">
+                  <div class="col-xs-6 col-md-6">
+                    <div class="dropdown">
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        検索条件追加
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#" onclick="extendSearchCondition1()">アルバム</a></li>
+                        <li><a href="#" onclick="extendSearchCondition2()">発売日</a></li>
+                        <li><a href="#" onclick="extendSearchCondition3()">販売元</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-md-6 text-right">
+                    <button type="button" id="btn-search" class="btn my-btn my-btn-submit">検索</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- search result area -->
+      <div id="search-result-wrapper" style="display:none;">
+        <form action="#" id="search-result-form" method="POST">
+          <div class="container-fluid">
+            <div class="col-sm-4">
+              <span>1-20 / 100 件</span>
+            </div>
+            <div class="col-sm-8 text-right">
+              <nav>
+                <ul class="pagination" style="margin-top:0;">
+                  <li><a href="#" aria-label="前のページへ"><span aria-hidden="true">&laquo;</span></a></li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li><a href="#" aria-label="次のページへ"><span aria-hidden="true">&raquo;</span></a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table id="search-result-table" class="table table-hover text-nowrap my-table">
+              <thead>
+                <tr>
+                  <th>コード</th>
+                  <th>タイトル</th>
+                  <th>アーティスト</th>
+                  <th>アルバム</th>
+                  <th>発売日</th>
+                  <th>販売元</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>010001</td>
+                  <td>Motherless Children</td>
+                  <td>Eric Clapton</td>
+                  <td>461 Ocean Boulevard</td>
+                  <td>1985/12/30</td>
+                  <td>XYZ</td>
+                </tr>
+                <tr>
+                  <td>010002</td>
+                  <td>Before You Accuse Me</td>
+                  <td>Eric Clapton</td>
+                  <td>Unplugged</td>
+                  <td>1985/12/30</td>
+                  <td>ABC</td>
+                </tr>
+                <tr>
+                  <td>020123</td>
+                  <td>Goodbye Pork Pie Hat</td>
+                  <td>Jeff Beck</td>
+                  <td>Wired</td>
+                  <td>1985/12/30</td>
+                  <td>ABC</td>
+                </tr>
+                <tr>
+                  <td>030980</td>
+                  <td>インディゴ地平線</td>
+                  <td>スピッツ</td>
+                  <td>インディゴ地平線</td>
+                  <td>1985/07/20</td>
+                  <td>AAA</td>
+                </tr>
+                <tr>
+                  <td>050050</td>
+                  <td>New Kid In Town</td>
+                  <td>Eagles</td>
+                  <td>The Very Best of the Eagles</td>
+                  <td>1985/07/20</td>
+                  <td>PPAP</td>
+                </tr>
+                <tr>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                </tr>
+                <tr>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                </tr>
+                <tr>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                </tr>
+                <tr>
+                  <td>090123</td>
+                  <td>Alright!!</td>
+                  <td>Superfly</td>
+                  <td>Box Emotions</td>
+                  <td>1985/07/20</td>
+                  <td>ZZZ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="container-fluid">
+            <div class="col-sm-4">
+              <span>1-20 / 100 件</span>
+            </div>
+            <div class="col-sm-8 text-right">
+              <nav>
+                <ul class="pagination" style="margin-top:0;">
+                  <li><a href="#" aria-label="前のページへ"><span aria-hidden="true">&laquo;</span></a></li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li><a href="#" aria-label="次のページへ"><span aria-hidden="true">&raquo;</span></a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="logout-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form action="00-login.html" id="logout-form" class="form-horizontal" method="GET">
+              <p class="text-center">ログアウトします。よろしいですか？</p>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="col-xs-6 col-md-6">
+            <button type="button" class="btn btn-default my-btn-submit" data-dismiss="modal">キャンセル</button>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <button type="button" class="btn my-btn my-btn-submit" onclick="logout(1500)">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="loading-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <img src="img/loading.gif" alt="loading" class="center-block">
+            <p class="my-loading-text">処理中...</p>
+            <button type="button" id="btn-loader" class="my-dummy-btn" data-toggle="modal" data-target="#loading-modal">dummy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  function extendSearchCondition1() {
+    $('#extended-search-condition').append('<div id="album-name-wrapper" class="form-group"><div class="form-inline"><div class="form-group"><input type="text" id="album-name" class="form-control" name="album-name" placeholder="アルバム"><span style="margin-left:5px"><a href="#" onclick="removeSearchCondition1()">×</a></span></div></div></div>');
+  }
+  function extendSearchCondition2() {
+    $('#extended-search-condition').append('<div id="release-date-wrapper" class="form-group"><div class="form-inline"><div class="form-group"><input type="date" id="release-date" class="form-control" name="release-date" placeholder="発売日"><span style="margin-left:5px"><a href="#" onclick="removeSearchCondition2()">×</a></span></div></div></div>');
+  }
+  function extendSearchCondition3() {
+    $('#extended-search-condition').append('<div id="vendor-name-wrapper" class="form-group"><div class="form-inline"><div class="form-group"><input type="text" id="vendor-name" class="form-control" name="vendor-name" placeholder="販売元"><span style="margin-left:5px"><a href="#" onclick="removeSearchCondition3()">×</a></span></div></div></div>');
+  }
+  function removeSearchCondition1() {
+    $('#album-name-wrapper').remove();
+  }
+  function removeSearchCondition2() {
+    $('#release-date-wrapper').remove();
+  }
+  function removeSearchCondition3() {
+    $('#vendor-name-wrapper').remove();
+  }
+  </script>
+
+</body>
+</html>
