@@ -9,3 +9,9 @@ function submitWithLoading(timeout, callback) {
     callback();
   }
 }
+
+function logout(timeout) {
+  submitWithLoading(timeout, function() {
+    $('#logout-form').submit();
+  });
+}

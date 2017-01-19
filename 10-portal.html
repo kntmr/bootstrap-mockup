@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Mockup</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/common.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-fixed-top my-navbar">
+    <div class="container-fluid">
+      <div class="navbar-left">
+        <a href="10-portal.html" class="navbar-text my-navbar-link">Bootstrap Mockup</a>
+      </div>
+      <div class="navbar-right">
+        <p class="navbar-text">
+          <a data-toggle="modal" data-target="#logout-modal" class="my-navbar-link">ログアウト</a>
+        </p>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="my-section-wrapper">
+      <section class="my-section text-center">
+        <h2 class="text-left">トップメニューA</h2>
+        <div class="my-category text-left">
+          <h3>メニューA</h3>
+          <ul>
+            <li><a href="#">検索／更新</a></li>
+            <li><a href="#">新規追加</a></li>
+          </ul>
+        </div>
+        <div class="my-category text-left">
+          <h3>メニューB</h3>
+          <ul>
+            <li><a href="#">サブメニュー1</a></li>
+            <li><a href="#">サブメニュー2</a></li>
+            <li><a href="#">サブメニュー3</a></li>
+            <li><a href="#">サブメニュー4</a></li>
+          </ul>
+        </div>
+        <div class="my-category text-left">
+          <h3>メニューC</h3>
+          <ul>
+            <li><a href="#">サブメニュー1</a><span class="badge my-badge">12</span></li></li>
+          </ul>
+        </div>
+        <div class="my-category text-left">
+          <h3>メニューD</h3>
+          <ul>
+            <li><a href="#">サブメニュー1</a></li>
+            <li><a href="#">サブメニュー2</a></li>
+            <li><a href="#">サブメニュー3</a></li>
+            <li><a href="#">サブメニュー4</a></li>
+            <li><a href="#">サブメニュー5</a></li>
+            <li><a href="#">サブメニュー6</a></li>
+            <li><a href="#">…</a></li>
+          </ul>
+        </div>
+      </section>
+      <hr>
+      <section class="my-section text-center">
+        <h2 class="text-left">トップメニューB</h2>
+        <div class="my-category text-left">
+          <h3>メニューA</h3>
+          <ul>
+            <li><a href="#">サブメニュー1</a></li>
+            <li><a href="#">サブメニュー2</a></li>
+          </ul>
+        </div>
+        <div class="my-category text-left">
+          <h3>メニューB</h3>
+          <ul>
+            <li><a href="#">サブメニュー1</a></li>
+            <li><a href="#">サブメニュー2</a></li>
+            <li><a href="#">サブメニュー3</a></li>
+            <li><a href="#">サブメニュー4</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div id="logout-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form action="00-login.html" id="logout-form" class="form-horizontal" method="GET">
+              <p class="text-center">ログアウトします。よろしいですか？</p>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="col-xs-6 col-md-6">
+            <button type="button" class="btn btn-default my-btn-submit" data-dismiss="modal">キャンセル</button>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <button type="button" class="btn my-btn my-btn-submit" onclick="logout(1500)">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="loading-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <img src="img/loading.gif" alt="loading" class="center-block">
+            <p class="my-loading-text">処理中...</p>
+            <button type="button" id="btn-loader" class="my-dummy-btn" data-toggle="modal" data-target="#loading-modal">dummy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

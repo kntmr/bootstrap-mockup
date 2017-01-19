@@ -1,4 +1,15 @@
 /******************************************************************************/
+/* general */
+/******************************************************************************/
+body {
+  padding-top: 50px;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+/******************************************************************************/
 /* common */
 /******************************************************************************/
 /* header */
@@ -12,6 +23,14 @@
   font-weight: bold;
 }
 
+.my-navbar-link,
+.my-navbar-link:hover {
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* container */
 .my-container {
   margin-top: 10%;
 }
@@ -31,6 +50,10 @@
   display: none;
 }
 
+.my-btn-submit {
+  width: 109px;
+}
+
 /* loading modal */
 .my-loading-text {
   font-size: large;
@@ -46,4 +69,47 @@
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 32px;
+}
+
+/******************************************************************************/
+/* portal */
+/******************************************************************************/
+@media (min-width: 1200px) {
+  .my-section-wrapper {
+    width: 800px;
+  }
+}
+
+.my-section-wrapper {
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.my-section {
+}
+
+.my-category {
+  display: inline-block;
+  width: 320px;
+  vertical-align: top;
+  margin: 0 20px 20px 0;
+}
+
+.my-section h2,
+.my-category h3 {
+  color: #4bacc6;
+}
+
+.my-category li {
+  list-style: url("../img/icon-arrow.png");
+}
+
+.my-badge {
+  margin-left: 5px;
+  background-color: #b3b3b3;
+  vertical-align: top;
+  font-weight: normal;
 }
