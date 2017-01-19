@@ -1,0 +1,49 @@
+/******************************************************************************/
+/* common */
+/******************************************************************************/
+/* header */
+.my-navbar {
+  color: #ffffff;
+  background: #558eff;
+  margin-bottom: 0;
+}
+
+.my-navbar-text {
+  font-weight: bold;
+}
+
+.my-container {
+  margin-top: 10%;
+}
+
+/* button */
+.my-btn {
+  color: #ffffff;
+  background: #558eff;
+}
+
+.my-btn:hover {
+  color: #ffffff;
+  background: #3c7fcf;
+}
+
+.my-dummy-btn {
+  display: none;
+}
+
+/* loading modal */
+.my-loading-text {
+  font-size: large;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/******************************************************************************/
+/* login */
+/******************************************************************************/
+.my-logo {
+  color: #558eff;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
