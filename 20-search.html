@@ -16,6 +16,9 @@
         $('#search-result-wrapper').show();
       });
     });
+    $('#search-result-table tr').on('click', function() {
+      $('#search-result-form').submit();
+    });
   });
   </script>
 </head>
@@ -119,7 +122,7 @@
 
       <!-- search result area -->
       <div id="search-result-wrapper" style="display:none;">
-        <form action="#" id="search-result-form" method="POST">
+        <form action="30-detail.html" id="search-result-form" method="POST">
           <div class="container-fluid">
             <div class="col-sm-4">
               <span>1-20 / 100 件</span>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Mockup</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/simple-sidebar.css">
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/common.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-fixed-top my-navbar">
+    <div class="container-fluid">
+      <div class="navbar-left">
+        <a href="10-portal.html" class="navbar-text my-navbar-link">Bootstrap Mockup</a>
+      </div>
+      <div class="navbar-right">
+        <p class="navbar-text">
+          <a data-toggle="modal" data-target="#logout-modal" class="my-navbar-link">ログアウト</a>
+        </p>
+      </div>
+    </div>
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- side navigation -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="active">
+          <a href="20-search.html">検索／更新</a>
+        </li>
+        <li>
+          <a href="#">新規追加</a>
+        </li>
+        <li>
+          <a href="#">サイドメニューA</a>
+        </li>
+        <li>
+          <a href="#">サイドメニューB</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- page content -->
+    <div id="page-content-wrapper">
+
+      <!-- title -->
+      <div class="row">
+        <div class="col-sm-8 my-content-summary">
+          <h3>010001　Motherless Children</h3>
+        </div>
+        <div class="col-sm-4 text-right">
+          <a href="#" class="my-icon icon-edit">更新</a>
+          <a href="#" class="my-icon icon-copy">コピー</a>
+          <a href="#" class="my-icon icon-delete">削除</a>
+        </div>
+      </div>
+
+      <!-- tab -->
+      <ul class="nav nav-tabs my-nav-tabs">
+        <li class="active"><a href="#tab-a" data-toggle="tab">基本情報</a></li>
+        <li><a href="#tab-b" data-toggle="tab">タブ2</a></li>
+        <li><a href="#tab-c" data-toggle="tab">タブ3</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="tab-a" class="tab-pane active">
+          <div class="form-horizontal">
+            <div class="form-group">
+              <label for="" class="col-sm-2 control-label">コード</label>
+              <div class="col-sm-10 my-control-text">
+                <span>010001</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2 control-label">タイトル</label>
+              <div class="col-sm-10 my-control-text">
+                <span>Motherless Children</span>
+              </div>
+            </div>
+            <hr>
+            <div class="form-group">
+              <label for="" class="col-sm-2 control-label">アーティスト</label>
+              <div class="col-sm-10 my-control-text">
+                <span>Eric Clapton</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2 control-label">アルバム</label>
+              <div class="col-sm-10 my-control-text">
+                <span>461 Ocean Boulevard</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2 control-label">発売日</label>
+              <div class="col-sm-10 my-control-text">
+                <span>1985/12/30</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2 control-label">販売元</label>
+              <div class="col-sm-10 my-control-text">
+                <span>XYZレコード</span>
+              </div>
+            </div>
+            <!-- extended area -->
+            <div id="extended-wrapper" class="collapse">
+              <hr>
+              <div class="form-group">
+                <label for="" class="col-sm-2 control-label">拡張項目1</label>
+                <div class="col-sm-10 my-control-text">
+                  <span>aaa</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="" class="col-sm-2 control-label">拡張項目2</label>
+                <div class="col-sm-10 my-control-text">
+                  <span>bbb</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="" class="col-sm-2 control-label">拡張項目3</label>
+                <div class="col-sm-10 my-control-text">
+                  <span>ccc</span>
+                </div>
+              </div>
+            </div>
+            <!-- extended area toggle -->
+            <div class="container-fluid">
+              <a href="#extended-wrapper" id="extended-area-toggle" data-toggle="collapse">拡張項目を表示</a>
+            </div>
+          </div>
+        </div>
+        <div id="tab-b" class="tab-pane">
+          <div class="container-fluid">
+            タブ2
+          </div>
+        </div>
+        <div id="tab-c" class="tab-pane">
+          <div class="container-fluid">
+            タブ3
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="logout-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form action="00-login.html" id="logout-form" class="form-horizontal" method="GET">
+              <p class="text-center">ログアウトします。よろしいですか？</p>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="col-xs-6 col-md-6">
+            <button type="button" class="btn btn-default my-btn-submit" data-dismiss="modal">キャンセル</button>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <button type="button" class="btn my-btn my-btn-submit" onclick="logout(1500)">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="loading-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <img src="img/loading.gif" alt="loading" class="center-block">
+            <p class="my-loading-text">処理中...</p>
+            <button type="button" id="btn-loader" class="my-dummy-btn" data-toggle="modal" data-target="#loading-modal">dummy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  $(function() {
+    $('#extended-area-toggle').on('click', function() {
+      if ($(this).attr('aria-expanded') === 'true') {
+        $(this).text('拡張項目を表示');
+      } else {
+        $(this).text('拡張項目を非表示');
+      }
+    });
+  });
+  </script>
+
+</body>
+</html>
