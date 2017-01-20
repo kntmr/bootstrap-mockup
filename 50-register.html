@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Mockup</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/simple-sidebar.css">
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+  $(function() {
+    $('#btn-register').on('click', function() {
+      submitWithLoading(2000, function() {
+        $('#register-form').submit();
+      });
+    });
+  });
+  </script>
+</head>
+<body>
+
+  <nav class="navbar navbar-fixed-top my-navbar">
+    <div class="container-fluid">
+      <div class="navbar-left">
+        <a href="10-portal.html" class="navbar-text my-navbar-link">Bootstrap Mockup</a>
+      </div>
+      <div class="navbar-right">
+        <p class="navbar-text">
+          <a data-toggle="modal" data-target="#logout-modal" class="my-navbar-link">ログアウト</a>
+        </p>
+      </div>
+    </div>
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- side navigation -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li>
+          <a href="20-search.html">検索／更新</a>
+        </li>
+        <li class="active">
+          <a href="50-register.html">新規追加</a>
+        </li>
+        <li>
+          <a href="#">サイドメニューA</a>
+        </li>
+        <li>
+          <a href="#">サイドメニューB</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- page content -->
+    <div id="page-content-wrapper">
+
+      <!-- title -->
+      <div class="row">
+        <div class="col-sm-8 my-content-summary">
+          <h3>新規タイトル</h3>
+        </div>
+      </div>
+
+      <!-- tab -->
+      <ul class="nav nav-tabs my-nav-tabs">
+        <li class="active"><a href="#tab-a" data-toggle="tab">基本情報</a></li>
+      </ul>
+      <div class="tab-content">
+        <form action="30-detail.html" id="register-form" class="form-horizontal" method="POST">
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">コード</label>
+            <div class="col-sm-10 my-control-text">
+              <input type="text" id="content-code" class="form-control" name="content-code">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">タイトル</label>
+            <div class="col-sm-10 my-control-text">
+              <input type="text" id="content-name" class="form-control" name="content-name">
+            </div>
+          </div>
+          <hr>
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">アーティスト</label>
+            <div class="col-sm-10 my-control-text">
+              <input type="text" id="author-name" class="form-control" name="author-name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">アルバム</label>
+            <div class="col-sm-10 my-control-text">
+              <input type="text" id="album-name" class="form-control" name="album-name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">発売日</label>
+            <div class="col-sm-10 my-control-text">
+              <input type="date" id="release-date" class="form-control my-input-date" name="release-date">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">販売元</label>
+            <div class="col-sm-10 my-control-text">
+              <input type="text" id="vendor-name" class="form-control" name="vendor-name">
+            </div>
+          </div>
+          <hr>
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">拡張項目1</label>
+            <div class="col-sm-10 my-control-text">
+              <textarea name="extended1" id="extended1" rows="3" class="form-control"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">拡張項目2</label>
+            <div class="col-sm-10 my-control-text">
+              <input type="text" id="extended2" class="form-control" name="extended2">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">拡張項目3</label>
+            <div class="col-sm-10 my-control-text">
+              <input type="text" id="extended3" class="form-control" name="extended3">
+            </div>
+          </div>
+          <hr>
+          <div class="form-group">
+            <div class="text-center my-container-fluid">
+              <button type="button" id="btn-register" class="btn my-btn my-btn-submit">追加</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="logout-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form action="00-login.html" id="logout-form" class="form-horizontal" method="GET">
+              <p class="text-center">ログアウトします。よろしいですか？</p>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="col-xs-6 col-md-6">
+            <button type="button" class="btn btn-default my-btn-submit" data-dismiss="modal">キャンセル</button>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <button type="button" class="btn my-btn my-btn-submit" onclick="logout(1500)">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="loading-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <img src="img/loading.gif" alt="loading" class="center-block">
+            <p class="my-loading-text">処理中...</p>
+            <button type="button" id="btn-loader" class="my-dummy-btn" data-toggle="modal" data-target="#loading-modal">dummy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
