@@ -35,6 +35,10 @@ hr {
   margin-top: 10%;
 }
 
+.my-container-fluid {
+  margin: 30px 15px;
+}
+
 /* button */
 .my-btn {
   color: #ffffff;
@@ -184,4 +188,11 @@ hr {
   min-height: 27px;
   margin-top: 7px;
   display: block;
+}
+
+/******************************************************************************/
+/* edit */
+/******************************************************************************/
+.my-input-date {
+  width: 160px;
 }

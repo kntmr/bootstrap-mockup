@@ -9,6 +9,15 @@
   <script src="js/jquery-2.2.4.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/common.js"></script>
+  <script>
+  $(function() {
+    $('#btn-update').on('click', function() {
+      submitWithLoading(2000, function() {
+        $('#edit-form').submit();
+      });
+    });
+  });
+  </script>
 </head>
 <body>
 
@@ -69,7 +78,7 @@
       </ul>
       <div class="tab-content">
         <div id="tab-a" class="tab-pane active">
-          <div class="form-horizontal">
+          <form action="30-detail.html" id="edit-form" class="form-horizontal" method="POST">
             <div class="form-group">
               <label for="" class="col-sm-2 control-label">コード</label>
               <div class="col-sm-10 my-control-text">
@@ -79,61 +88,60 @@
             <div class="form-group">
               <label for="" class="col-sm-2 control-label">タイトル</label>
               <div class="col-sm-10 my-control-text">
-                <span>Motherless Children</span>
+                <input type="text" id="content-name" class="form-control" name="content-name" value="Motherless Children">
               </div>
             </div>
             <hr>
             <div class="form-group">
               <label for="" class="col-sm-2 control-label">アーティスト</label>
               <div class="col-sm-10 my-control-text">
-                <span>Eric Clapton</span>
+                <input type="text" id="author-name" class="form-control" name="author-name" value="Eric Clapton">
               </div>
             </div>
             <div class="form-group">
               <label for="" class="col-sm-2 control-label">アルバム</label>
               <div class="col-sm-10 my-control-text">
-                <span>461 Ocean Boulevard</span>
+                <input type="text" id="album-name" class="form-control" name="album-name" value="461 Ocean Boulevard">
               </div>
             </div>
             <div class="form-group">
               <label for="" class="col-sm-2 control-label">発売日</label>
               <div class="col-sm-10 my-control-text">
-                <span>1985/12/30</span>
+                <input type="date" id="release-date" class="form-control my-input-date" name="release-date" value="1985-12-30">
               </div>
             </div>
             <div class="form-group">
               <label for="" class="col-sm-2 control-label">販売元</label>
               <div class="col-sm-10 my-control-text">
-                <span>XYZレコード</span>
+                <input type="text" id="vendor-name" class="form-control" name="vendor-name" value="XYZレコード">
               </div>
             </div>
-            <!-- extended area -->
-            <div id="extended-wrapper" class="collapse">
-              <hr>
-              <div class="form-group">
-                <label for="" class="col-sm-2 control-label">拡張項目1</label>
-                <div class="col-sm-10 my-control-text">
-                  <span>aaa</span>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="" class="col-sm-2 control-label">拡張項目2</label>
-                <div class="col-sm-10 my-control-text">
-                  <span>bbb</span>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="" class="col-sm-2 control-label">拡張項目3</label>
-                <div class="col-sm-10 my-control-text">
-                  <span>ccc</span>
-                </div>
+            <hr>
+            <div class="form-group">
+              <label for="" class="col-sm-2 control-label">拡張項目1</label>
+              <div class="col-sm-10 my-control-text">
+                <textarea name="extended1" id="extended1" rows="3" class="form-control">aaa</textarea>
               </div>
             </div>
-            <!-- extended area toggle -->
-            <div class="container-fluid">
-              <a href="#extended-wrapper" id="extended-area-toggle" data-toggle="collapse">拡張項目を表示</a>
+            <div class="form-group">
+              <label for="" class="col-sm-2 control-label">拡張項目2</label>
+              <div class="col-sm-10 my-control-text">
+                <input type="text" id="extended2" class="form-control" name="extended2" value="bbb">
+              </div>
             </div>
-          </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2 control-label">拡張項目3</label>
+              <div class="col-sm-10 my-control-text">
+                <input type="text" id="extended3" class="form-control" name="extended3" value="ccc">
+              </div>
+            </div>
+            <hr>
+            <div class="form-group">
+              <div class="text-center my-container-fluid">
+                <button type="button" id="btn-update" class="btn my-btn my-btn-submit">保存</button>
+              </div>
+            </div>
+          </form>
         </div>
         <div id="tab-b" class="tab-pane">
           <div class="container-fluid">
@@ -186,18 +194,6 @@
       </div>
     </div>
   </div>
-
-  <script>
-  $(function() {
-    $('#extended-area-toggle').on('click', function() {
-      if ($(this).attr('aria-expanded') === 'true') {
-        $(this).text('拡張項目を表示');
-      } else {
-        $(this).text('拡張項目を非表示');
-      }
-    });
-  });
-  </script>
 
 </body>
 </html>
