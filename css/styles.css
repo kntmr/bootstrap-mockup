@@ -168,6 +168,10 @@ hr {
   background-image: url("../img/icon-copy.png");
 }
 
+.icon-add {
+  background-image: url("../img/icon-add.png");
+}
+
 .icon-delete {
   background-image: url("../img/icon-delete.png");
 }
